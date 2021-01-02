@@ -6,18 +6,18 @@
 
 
 | Term      | Description |
-| :---:        |    :----  |                                                                                                 |
-|Fan：               |      风扇转速（0%--100%），N/A表示没有风扇                                          |
-|Temp：              |   GPU温度（GPU温度过高会导致GPU频率下降）                                             |
-|Perf：              |      性能状态，从P0（最大性能）到P12（最小性能）                                          |
-|Pwr：               |      GPU功耗                                                             |
-|Persistence-M：   	|	持续模式的状态（持续模式耗能大，但在新的GPU应用启动时花费时间更少）                                  |
-|Bus-Id：            |   	GPU总线，domain:bus:device.function                                 |
-|Disp.A：            |    Display Active，表示GPU的显示是否初始化                                        |
-|Memory-Usage：		|	显存使用率                                                                |
-|Volatile GPU-Util：	|	GPU使用率                                                               |
-|ECC：               |    是否开启错误检查和纠正技术，0/DISABLED, 1/ENABLED                                 |
-|Compute M.：     	|	计算模式，0/DEFAULT,1/EXCLUSIVE_PROCESS,2/PROHIBITED
+| :---:        |    :----  |
+|Fan                |      风扇转速（0%--100%），N/A表示没有风扇                                          |
+|Temp               |   GPU温度（GPU温度过高会导致GPU频率下降）                                             |
+|Perf               |      性能状态，从P0（最大性能）到P12（最小性能）                                          |
+|Pwr                |      GPU功耗                                                             |
+|Persistence-M    	|	持续模式的状态（持续模式耗能大，但在新的GPU应用启动时花费时间更少）             |
+|Bus-Id             |   	GPU总线，domain:bus:device.function                                 |
+|Disp.A             |    Display Active，表示GPU的显示是否初始化                                        |
+|Memory-Usage 		|	显存使用率                                                                |
+|Volatile GPU-Util 	|	GPU使用率                                                               |
+|ECC                |    是否开启错误检查和纠正技术，0/DISABLED, 1/ENABLED                          |
+|Compute M.      	|	计算模式，0/DEFAULT,1/EXCLUSIVE_PROCESS,2/PROHIBITED |
 
 
 
@@ -26,7 +26,7 @@
 |nvidia-smi -q -i xxx -f xxx  |     指定具体的GPU或unit信息;将查询的信息输出到具体的文件中，不在终端显示 |
 |nvidia-smi -q -d xxx         |   指定显示GPU卡某些信息，xxx参数可以为MEMORY, UTILIZATION, ECC, TEMPERATURE, POWER,CLOCK, COMPUTE, PIDS, PERFORMANCE, SUPPORTED_CLOCKS, PAGE_RETIREMENT,ACCOUNTING |
 |nvidia-smi -q -l xxx         |   动态刷新信息，可指定刷新频率，以秒为单位 |
-|nvidia-smi --query-gpu=gpu_name,gpu_bus_id,vbios_version--format=csv     |       选择性查询选项，可以指定显示的属性选项 可查看的属性有：timestamp，driver_version，pci.bus，pcie.link.width.current等。（可查看nvidia-smi--help-query-gpu来查看有哪些属性）|
+|nvidia-smi --query-gpu=gpu_name,gpu_bus_id,vbios_version--format=csv     |       选择性查询选项，可以指定显示的属性选项 可查看的属性有 timestamp，driver_version，pci.bus，pcie.link.width.current等。（可查看nvidia-smi--help-query-gpu来查看有哪些属性）|
 
  
 
@@ -34,10 +34,10 @@
 
 | Command      | Description |   
 | :---:        |    :----  |     
-|nvidia-smi -pm 0/1    |          设置持久模式：0/DISABLED,1/ENABLED                                |
-|nvidia-smi -e 0/1     |          切换ECC支持：0/DISABLED, 1/ENABLED                              |
-|nvidia-smi -p 0/1     |      重置ECC错误计数：0/VOLATILE, 1/AGGREGATE                              |
-|nvidia-smi -c.        |      设置计算应用模式：0/DEFAULT,1/EXCLUSIVE_PROCESS,2/PROHIBITED            |
+|nvidia-smi -pm 0/1    |          设置持久模式 0/DISABLED,1/ENABLED                                |
+|nvidia-smi -e 0/1     |          切换ECC支持 0/DISABLED, 1/ENABLED                              |
+|nvidia-smi -p 0/1     |      重置ECC错误计数 0/VOLATILE, 1/AGGREGATE                              |
+|nvidia-smi -c.        |      设置计算应用模式 0/DEFAULT,1/EXCLUSIVE_PROCESS,2/PROHIBITED            |
 |nvidia-smi -r         |      GPU复位                                                          |
 |nvidia-smi -vm.       |      设置GPU虚拟化模式                                                     |
 |nvidia-smi -ac xxx,xxx|      设置GPU运行的工作频率。e.g. nvidia-smi -ac2000,800                       |
@@ -63,23 +63,23 @@ nvidia-smi dmon -s "pucet" -i 0 -o "DT" -d 2
  20210102   19:12:35      0    39    19     -     0     0     0     0  4006  1582     -     -     0     0     0
 ```
 
-附加选项：
+附加选项 
 
 | Command      | Description |
 | :---:        |    :----  |     
 |nvidia-smi dmon -i          |                                                     |
 |nvidia-smi dmon -d xxx		 |  指定刷新时间（默认为1秒）                                      |
 |nvidia-smi dmon -c xxx 	|	显示指定数目的统计信息并退出                                     |
-|nvidia-smi dmon -o "DT" 	|	指定显示的时间格式D：YYYYMMDD，TH                             |
+|nvidia-smi dmon -o "DT" 	|	指定显示的时间格式D YYYYMMDD，TH                             |
 |nvidia-smi dmon -f log.txt |		将查询的信息输出到具体的文件中，不在终端显示                         |
-|nvidia-smi dmon -s "puc"    |  指定显示哪些监控指标（默认为puc），其中：                             |
+|nvidia-smi dmon -s "puc"    |  指定显示哪些监控指标（默认为puc），其中                              |
 
 
 | metrics for `-s`     | Description |
 | :---:        |    :----  |
-|p | 电源使用情况和温度（pwr：功耗，temp：温度）                          |
-|u | GPU使用率（sm：流处理器，mem：显存，enc：编码资源，dec：解码资源）           |
-|c | GPU处理器和GPU内存时钟频率（mclk：显存频率，pclk：处理器频率）             |
+|p | 电源使用情况和温度（pwr 功耗，temp 温度）                          |
+|u | GPU使用率（sm 流处理器，mem 显存，enc 编码资源，dec 解码资源）           |
+|c | GPU处理器和GPU内存时钟频率（mclk 显存频率，pclk 处理器频率）             |
 |v | 电源和热力异常                                            |
 |m | FB内存和Bar1内存                                        |
 |e | ECC错误和PCIe重显错误个数                                   |
