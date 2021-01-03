@@ -333,3 +333,10 @@ nvidia-smi [OPTION1 [ARG1]] [OPTION2 [ARG2]] ...
 Please see the nvidia-smi(1) manual page for more detailed information.
 
 ```
+
+
+
+#### Reference
+
+
+- https://blog.csdn.net/C_chuxin/article/details/82993350
