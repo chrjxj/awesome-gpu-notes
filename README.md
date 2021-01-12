@@ -5,7 +5,7 @@
 
 ## GPU Architecture
 
-
+TBA
 
 
 ## Documents
@@ -21,9 +21,9 @@
 ## Topics
 
 
-https://developer.nvidia.com/blog/inside-volta/
-https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/
-https://developer.nvidia.com/blog/cooperative-groups/
+* https://developer.nvidia.com/blog/inside-volta/
+* https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/
+* https://developer.nvidia.com/blog/cooperative-groups/
 
 
 ## Tools
@@ -31,11 +31,9 @@ https://developer.nvidia.com/blog/cooperative-groups/
 
 #### NVIDIA System Management (nvidia-smi and NVML)
 
+TBA
 
-
-#### nsight
-
-NVIDIA Nsight Systems
+#### NVIDIA Nsight Systems
 
 - [official site](https://developer.nvidia.com/nsight-systems)
 - [Document home](https://docs.nvidia.com/nsight-systems/index.html)
