@@ -38,3 +38,13 @@ row 10239: [ 1.000000, 1.000000, 1.000000, 1.000000, 1.00
 note: 
 
 - changing the `BLOCK_SIZE` macro will get difference time consumption results.
+
+
+### Profiling
+
+
+1. In the target system, run `nsys profile -o your-output-filename ./matMul` and generate profiling file.
+2. In the host system, use `nsight system` to open the *.qdrep file
+
+
+
