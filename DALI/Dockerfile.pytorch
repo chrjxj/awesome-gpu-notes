@@ -1,0 +1,10 @@
+FROM nvcr.io/nvidia/pytorch:21.04-py3
+
+
+RUN apt update && apt install -y git-lfs  && cd /workspace/ && \
+    git clone https://github.com/NVIDIA/DALI.git  && cd DALI && \
+    git checkout release_v1.0 && mv docs/examples ../DALI_examples && cd .. && rm -rf DALI && \
+    git clone https://github.com/NVIDIA/DALI_extra.git
+
+ENV DALI_EXTRA_PATH=/workspace/DALI_extra
+
