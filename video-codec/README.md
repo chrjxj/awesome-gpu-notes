@@ -1,6 +1,17 @@
 # NVidia Codec
 
-## Background
+
+## Codecs (Encoding & Decoding) Basics
+
+* [H.264 Encoding & Decoding Basics](https://youtu.be/J9RemuYxA4s)
+* [video-encoding-decoding-and-transcoding](https://www.haivision.com/blog/all/the-beginners-guide-to-video-encoding-decoding-and-transcoding/)
+* [What is Video Encoding? Codecs and Compression Techniques](https://blog.video.ibm.com/streaming-video-tips/what-is-video-encoding-codecs-compression-techniques/)
+* [![Video Formats, Codecs and Containers (Explained)
+](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/XvoW-bwIeyY)
+* [![Video: Formats, Codecs & Containers](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/-4NXxY4maYc)
+
+
+## NVidia Codec
 
 - [Decode performance in FPS](https://developer.nvidia.com/sites/default/files/akamai/designworks/images-videocodec/nvedec_9.1_1080p_002.png) reported in official website
 
