@@ -6,9 +6,8 @@
 * [H.264 Encoding & Decoding Basics](https://youtu.be/J9RemuYxA4s)
 * [video-encoding-decoding-and-transcoding](https://www.haivision.com/blog/all/the-beginners-guide-to-video-encoding-decoding-and-transcoding/)
 * [What is Video Encoding? Codecs and Compression Techniques](https://blog.video.ibm.com/streaming-video-tips/what-is-video-encoding-codecs-compression-techniques/)
-* [![Video Formats, Codecs and Containers (Explained)
-](https://icons.iconarchive.com/icons/dtafalonso/android-l/48/Youtube-icon.png)](https://youtu.be/XvoW-bwIeyY)
-* [![Video: Formats, Codecs & Containers](https://icons.iconarchive.com/icons/dtafalonso/android-l/48/Youtube-icon.png)](https://youtu.be/-4NXxY4maYc)
+* [Video Formats, Codecs and Containers (Explained)](https://youtu.be/XvoW-bwIeyY)
+* [Video: Formats, Codecs & Containers](https://youtu.be/-4NXxY4maYc)
 
 
 ## NVidia Codec
