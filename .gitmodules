@@ -1,0 +1,3 @@
+[submodule "profiling/nvidia-performance-tools"]
+	path = profiling/nvidia-performance-tools
+	url = https://github.com/cwpearson/nvidia-performance-tools.git
