@@ -1,30 +1,39 @@
 # awesome-gpu-notes
 
+## GPU and CUDA Documents
+
+GPU architecture
+
+- [nvidia-ampere-architecture-whitepaper](https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf)
+- [TESLA V100 GPU ARCHITECTURE](https://images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf)
+
+CUDA
+
+- [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
+- [CUDA Best Practice Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html)
+- CUDA Sample Code
+
+    * [sgemm](https://github.com/cwpearson/nvidia-performance-tools/tree/90890e807ef9fc1532ee08938de6689444701686/sgemm)
 
 
-
-## GPU Architecture
-
-TBA
-
-
-## Documents
-
-- [Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
-- [Best Practice Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html)
-
-
-## CUDA Sample Code
-
-
-
-## Topics
-
+Topics
 
 * https://developer.nvidia.com/blog/inside-volta/
 * https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/
 * https://developer.nvidia.com/blog/cooperative-groups/
 
+
+## Inference
+
+
+TensorRT
+
+Triton
+
+
+## Training
+
+- [distributed training](distributed-training/README.md)
 
 ## Tools
 
