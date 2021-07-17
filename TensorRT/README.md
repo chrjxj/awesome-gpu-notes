@@ -47,6 +47,12 @@ Third-party
     * Pytorch: [quantization](https://pytorch.org/docs/stable/quantization.html), [Quantized Transfer Learning for Computer Vision Tutorial](https://pytorch.org/tutorials/intermediate/quantized_transfer_learning_tutorial.html)
     * Tensorflow QAT [Blog](https://www.tensorflow.org/model_optimization/guide/quantization/training)
 
+1. TensorRT's `pytorch-quantization-toolkit`
+
+	* [userguide](https://docs.nvidia.com/deeplearning/tensorrt/pytorch-quantization-toolkit/docs/userguide.html)
+
+
+
 GTC sessions
 
 * GTC talks for [quantization](https://www.nvidia.com/en-us/gtc/on-demand/?search=quantization)
