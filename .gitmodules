@@ -1,3 +1,6 @@
 [submodule "profiling/nvidia-performance-tools"]
 	path = profiling/nvidia-performance-tools
 	url = https://github.com/cwpearson/nvidia-performance-tools.git
+[submodule "tutorials/gpubootcamp"]
+	path = tutorials/gpubootcamp
+	url = https://github.com/gpuhackathons-org/gpubootcamp
