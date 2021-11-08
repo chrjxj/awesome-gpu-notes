@@ -4,7 +4,7 @@
 ### Talks and workshops
 
 | Title  | Resource | Description |
-|: ------ |: ----------- |:----------- |
+|:-----|:-----------|:-----------|
 | GTC2019, Session 9143, mixed precision Training | [record](https://on-demand-gtc.gputechconf.com/gtcnew/sessionview.php?sessionName=s9143-mixed+precision+training+of+deep+neural+networks) | mixed precision from a general perspective |
 | GTC2019, Session 9998, APEX in PyTorch | [record](https://on-demand-gtc.gputechconf.com/gtcnew/sessionview.php?sessionName=s9998-automatic+mixed+precision+in+pytorch) | Pytorch-specific perspective |
 
