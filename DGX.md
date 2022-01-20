@@ -5,14 +5,14 @@
 
 
 
-GTC Sessions (https://www.nvidia.com/en-us/gtc/session-catalog/) :
+[GTC Sessions](https://www.nvidia.com/en-us/gtc/session-catalog/):
 
-    * Introducing NVIDIA DGX A100: the Universal AI System for Enterprise [S21702](https://www.nvidia.com/en-us/on-demand/session/gtcsj20-s21702/)
-    * Under the Hood of the new DGX A100 System Architecture [S21884](https://www.nvidia.com/en-us/on-demand/session/gtcsj20-s21884/)
-    * NVIDIA Selene: Leadership-Class AI Supercomputing Infrastructure [S31844](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31844/)
-    * Scheduling, Resource-Managing, and Monitoring Selene, a Supercomputer for Large-Scale DL and HPC. [S31700](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31700/)
-    * Accelerating AI at-scale with Selene DGXA100 SuperPOD and Parallel Filesystem * Storage [S31522](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31522/)
-    * Advanced containerized workloads in HPC environment: the Selene example [S31704](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31704/)
+* Introducing NVIDIA DGX A100: the Universal AI System for Enterprise [S21702](https://www.nvidia.com/en-us/on-demand/session/gtcsj20-s21702/)
+* Under the Hood of the new DGX A100 System Architecture [S21884](https://www.nvidia.com/en-us/on-demand/session/gtcsj20-s21884/)
+* NVIDIA Selene: Leadership-Class AI Supercomputing Infrastructure [S31844](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31844/)
+* Scheduling, Resource-Managing, and Monitoring Selene, a Supercomputer for Large-Scale DL and HPC. [S31700](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31700/)
+* Accelerating AI at-scale with Selene DGXA100 SuperPOD and Parallel Filesystem * Storage [S31522](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31522/)
+* Advanced containerized workloads in HPC environment: the Selene example [S31704](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31704/)
 
 
 HotChips
