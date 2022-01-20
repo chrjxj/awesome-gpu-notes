@@ -17,7 +17,7 @@
 
 HotChips
 
-* Hot Chips Tutorial - Scale Out Training Experiences – Megatron Language Model [](https://youtu.be/QzcbnI42-VI)
+* Hot Chips Tutorial - Scale Out Training Experiences – Megatron Language Model [YouTube](https://youtu.be/QzcbnI42-VI)
 
     * Part I: Scale Out Systems
         * DGX A100 SuperPOD, Michael Houston, NVIDIA
