@@ -3,7 +3,7 @@
 ## TensorRT 教程
 
 | 主题 | 内容介绍 | Video |
-|:------|: -----------|:---:|
+|:------|:-----------|:---:|
 | TensorRT 简介 | TensorRT 基本特性和用法; Workflow: 使用 TensorRT API 搭建, 使用 Parser ; 使用框架内 TensorRT 接口  | [video](https://www.bilibili.com/video/BV15Y4y1W73E?share_source=copy_web) |
 | 开发辅助工具 | trtexec; Netron; onnx-graphsurgeon; polygraphy; Nsight Systems  | [video](https://www.bilibili.com/video/BV19T4y1e7XK?share_source=copy_web) |
 | TensorRT Plugin | Plugin 简介; 使用 Plugin 的简单例子; TensorRT 与 Plugin 的交互; 关键 API; 结合使用 Parser 和 Plugin; 高级话题; 使用 Plugin 的案例 |[video](https://www.bilibili.com/video/BV1t34y1s7mo?share_source=copy_web) |
