@@ -1,5 +1,18 @@
 # TensorRT
 
+## TensorRT 教程
+
+| 主题 | 内容介绍 | Video |
+|:------|: -----------|:---:|
+| TensorRT 简介 | TensorRT 基本特性和用法; Workflow: 使用 TensorRT API 搭建, 使用 Parser ; 使用框架内 TensorRT 接口  | [video](https://www.bilibili.com/video/BV15Y4y1W73E?share_source=copy_web) |
+| 开发辅助工具 | trtexec; Netron; onnx-graphsurgeon; polygraphy; Nsight Systems  | [video](https://www.bilibili.com/video/BV19T4y1e7XK?share_source=copy_web) |
+| TensorRT Plugin | Plugin 简介; 使用 Plugin 的简单例子; TensorRT 与 Plugin 的交互; 关键 API; 结合使用 Parser 和 Plugin; 高级话题; 使用 Plugin 的案例 |[video](https://www.bilibili.com/video/BV1t34y1s7mo?share_source=copy_web) |
+| TensorRT 高级话题 | Multiple Optimization Profile; Multiple context and stream;  CUDA Graph; Timing Cache; Algorithm Selector; Refit; Tactic Source |[video](https://www.bilibili.com/video/BV1s3411H7PW?share_source=copy_web)|
+
+* 配套的代码库: [link](https://github.com/NVIDIA/trt-samples-for-hackathon-cn/tree/master/cookbook)
+
+
+
 ## General
 
 #### GTC Talks and Workshops
@@ -14,6 +27,9 @@
 - S31864 – New Features in TRTorch, a PyTorch/TorchScript Compiler Targeting NVIDIA GPUs Using TensorRT
 - S32224 – Accelerating Deep Learning Inference with ONNXRuntime-TensorRT
 - S31695 – Prototyping and Debugging Deep Learning Inference Models Using TensorRT’s ONNX-Graphsurgeon and Polygraphy Tools
+
+
+
 
 #### Source code
 
@@ -51,9 +67,5 @@ Third-party
 
 	* [userguide](https://docs.nvidia.com/deeplearning/tensorrt/pytorch-quantization-toolkit/docs/userguide.html)
 
-
-
-GTC sessions
-
-* GTC talks for [quantization](https://www.nvidia.com/en-us/gtc/on-demand/?search=quantization)
-* GTC21 – QAT in PyTorch with TensorRT 8.0: [link](https://gtc21.event.nvidia.com/media/Quantization%20Aware%20Training%20in%20PyTorch%20with%20TensorRT%208.0%20%5BS31653%5D/1_qdvvff64)
+GTC talks for [quantization](https://www.nvidia.com/en-us/gtc/on-demand/?search=quantization)
+- GTC21 – QAT in PyTorch with TensorRT 8.0: [link](https://gtc21.event.nvidia.com/media/Quantization%20Aware%20Training%20in%20PyTorch%20with%20TensorRT%208.0%20%5BS31653%5D/1_qdvvff64)

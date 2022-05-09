@@ -4,3 +4,6 @@
 [submodule "tutorials/gpubootcamp"]
 	path = tutorials/gpubootcamp
 	url = https://github.com/gpuhackathons-org/gpubootcamp
+[submodule "TensorRT/trt-samples-for-hackathon-cn"]
+	path = TensorRT/trt-samples-for-hackathon-cn
+	url = https://github.com/NVIDIA/trt-samples-for-hackathon-cn
