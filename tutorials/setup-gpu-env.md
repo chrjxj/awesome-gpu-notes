@@ -2,9 +2,7 @@
 
 以Ubuntu为例
 
-* 安装GPU驱动
-* 安装容器 (Docker-CE) 和 nvidia-docker
-* 使用 NGC
+[toc]
 
 ## 1. 安装GPU驱动
 
@@ -122,6 +120,16 @@ Password: 【这里输入在网站生成的 API密钥】
 ```
 
 5. 到网站 https://catalog.ngc.nvidia.com 找到需要的容器, 拉取镜像, 如: `docker pull nvcr.io/nvidia/pytorch:22.02-py3`
+
+## 4. 其他Linux发行版
+
+#### RHEL 7 or RHEL 8
+
+在RHEL 7 or RHEL 8 上安装、配置NVIDIA GPU 驱动程序、CUDA和 nvidia-container-toolkit: [教程](https://www.redhat.com/en/blog/how-use-gpus-containers-bare-metal-rhel-8), [脚本](./enable-GPUs-containers-rhel)
+
+    * 来源: https://github.com/openshift-psap/blog-artifacts/tree/master/how-to-enable-GPUs-containers-rhel
+
+
 
 
 

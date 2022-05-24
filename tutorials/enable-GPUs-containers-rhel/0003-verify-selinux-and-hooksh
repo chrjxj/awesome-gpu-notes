@@ -1,0 +1,5 @@
+#! /bin/bash
+
+podman run  --user 1000:1000 --security-opt=no-new-privileges --cap-drop=ALL \
+  --security-opt label=type:nvidia_container_t \
+  docker.io/mirrorgooglecontainers/cuda-vector-add:v0.1
