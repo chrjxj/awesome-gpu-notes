@@ -2,6 +2,24 @@
 
 ##  nvidia-smi
 
+
+常用命令
+
+```bash
+nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link.gen.max, pcie.link.gen.current,temperature.gpu,utilization.gpu,utilization.memory, memory.total,memory.free,memory.used --format=csv -l 5
+
+
+nvidia-smi --query-gpu=timestamp,name,utilization.gpu,utilization.memory, --format=csv -lms 1000
+
+
+nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link.gen.max, pcie.link.gen.current,temperature.gpu,utilization.gpu,utilization.memory, memory.total,memory.free,memory.used --format=csv -lms 5
+```
+
+![时钟和电源相关命令](./images/1.png)
+
+详见: http://nvidia.custhelp.com/app/answers/detail/a_id/3751/~/useful-nvidia-smi-queries
+
+
 #### nvidia-smi 查询
 
 
