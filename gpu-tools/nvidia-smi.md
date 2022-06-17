@@ -104,17 +104,17 @@ nvidia-smi dmon -s "pucet" -i 0 -o "DT" -d 2
 |t | PCIe读写带宽                                           |
 
 
-
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 
+#### 在Windows上使用 `nvidia-smi`
 
+- nvidia-smi所在的位置为：`C:\Program Files\NVIDIA Corporation\NVSMI`
+- 建议添加路径到系统的 `PATH` 变量进行编辑
 
-#### NVIDIA Management Library (NVML)
-
-
+## NVIDIA Management Library (NVML)
 
 ```
 ----------------------------------------------------------
@@ -124,8 +124,8 @@ nvidia-smi dmon -s "pucet" -i 0 -o "DT" -d 2
 ----------------------------------------------------------
 ```
 
-`pip install nvidia-ml-py`
-
+- 安装Python包 `pip install nvidia-ml-py`
+- NVML API[手册](https://docs.nvidia.com/deploy/nvml-api/nvml-api-reference.html)
 
 
 ## 附录

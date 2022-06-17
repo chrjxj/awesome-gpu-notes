@@ -11,11 +11,13 @@
 
     * 查看是否安装了NVIDIA GPU: `lspci | grep -i nvidia`
     * 【重要】根据GPU的型号，OS的版本，从官网下载*对应*的驱动程序 https://www.nvidia.com/Download/index.aspx?lang=en-us
+      * 以安装 NVIDIA Tesla 驱动为例的详细[步骤](https://cloud.tencent.com/document/product/560/8048)
+    
     * 如已知需要下载的驱动版本，也可以命令行下直接下载
     ```bash
-    $ BASE_URL=https://us.download.nvidia.com/tesla
-    $ DRIVER_VERSION=450.80.02
-    $ curl -fSsl -O $BASE_URL/$DRIVER_VERSION/NVIDIA-Linux-x86_64-$DRIVER_VERSION.run
+    BASE_URL=https://us.download.nvidia.com/tesla
+    DRIVER_VERSION=450.80.02
+    curl -fSsl -O $BASE_URL/$DRIVER_VERSION/NVIDIA-Linux-x86_64-$DRIVER_VERSION.run
     ```    
     * 安装必要的软件: `sudo apt update && apt install -y build-essential libglvnd-dev pkg-config`
 
@@ -52,7 +54,10 @@
 * https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html
 * https://www.nvidia.com/Download/Find.aspx?lang=en-us 
 
- 
+
+(可选) 建议使用以预装CUDA的容器；作为可选项，在主机的OS上，也可以安装CUDA，居然步骤请参见: https://cloud.tencent.com/document/product/560/8064
+
+
 ## 2. 安装容器环境
 
 
