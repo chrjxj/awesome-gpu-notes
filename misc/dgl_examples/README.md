@@ -4,9 +4,9 @@ Before start, please go to https://developer.nvidia.com/dgl-container-early-acce
 
 ## 1. OpenVaccine
 
-See OpenVaccine's [README](./stanford-covid-vaccine/README.md) file.
+See OpenVaccine's [README](./stanford-covid-vaccine/) file.
 
-## SE3Transformer
+## 2. SE3Transformer
 
 1. Download SE3Transformer from [DeepLearningExamples](https://github.com/NVIDIA/DeepLearningExamples/tree/master/DGLPyTorch/DrugDiscovery/SE3Transformer); (only need `SE3Transformer` folder)
 
