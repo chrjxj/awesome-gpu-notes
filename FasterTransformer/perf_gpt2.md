@@ -65,3 +65,18 @@ E.g., ./bin/gpt_gemm 8 8 12 64 50257 32 1 1
 
 - edit `../sample/cpp/gpt_config.ini` for `./bin/gpt_sample`
 - run inference test: `./bin/gpt_sample`
+
+
+### Performance of GPT-1558M
+
+in my test:
+
+- fastertransformer 4.0, 1*A100 GPU, GPT-2，1.5B，batch size 8/16: latency  115 - 120 ms
+- fastertransformer 4.0, 1*V100 GPU, GPT-2，1.5B，batch size 8: latency  150ms  
+
+see more perf data: https://github.com/NVIDIA/FasterTransformer/blob/main/docs/gpt_guide.md#performance
+
+### Others
+
+fastertransformer  Triton backend https://github.com/triton-inference-server/fastertransformer_backend
+
