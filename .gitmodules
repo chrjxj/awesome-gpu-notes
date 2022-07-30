@@ -7,3 +7,6 @@
 [submodule "TensorRT/trt-samples-for-hackathon-cn"]
 	path = TensorRT/trt-samples-for-hackathon-cn
 	url = https://github.com/NVIDIA/trt-samples-for-hackathon-cn
+[submodule "CUDA/mini-nbody"]
+	path = CUDA/mini-nbody
+	url = https://github.com/harrism/mini-nbody.git
