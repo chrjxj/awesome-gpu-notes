@@ -10,3 +10,6 @@
 [submodule "CUDA/mini-nbody"]
 	path = CUDA/mini-nbody
 	url = https://github.com/harrism/mini-nbody.git
+[submodule "CUDA/gtc2017-numba"]
+	path = CUDA/gtc2017-numba
+	url = https://github.com/ContinuumIO/gtc2017-numba.git
