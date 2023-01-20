@@ -16,3 +16,6 @@
 [submodule "pytorch/pytorch-parallel"]
 	path = pytorch/pytorch-parallel
 	url = https://github.com/tczhangzhi/pytorch-parallel.git
+[submodule "pytorch/pytorch-distributed"]
+	path = pytorch/pytorch-distributed
+	url = https://github.com/tczhangzhi/pytorch-distributed.git
