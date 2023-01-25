@@ -126,6 +126,8 @@ Password: 【这里输入在网站生成的 API密钥】
 
 5. 到网站 https://catalog.ngc.nvidia.com 找到需要的容器, 拉取镜像, 如: `docker pull nvcr.io/nvidia/pytorch:22.02-py3`
 
+详见: [基于GPU实例部署NGC环境](https://cloud.baidu.com/doc/GPU/s/fkppdq6rd)
+
 ## 4. 其他Linux发行版
 
 #### RHEL 7 or RHEL 8
