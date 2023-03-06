@@ -1,11 +1,14 @@
-#  NVIDIA System Management Interface (nvidia-smi) and Management Library (NVML)
+# NVIDIA常用工具和命令
 
-##  nvidia-smi
+## nvidia-smi
 
-
-常用命令
+#### `nvidia-smi` 常用命令
 
 ```bash
+
+# print GPU's FULL name
+nvidia-smi --query-gpu=name --format=csv,noheader
+
 nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link.gen.max, pcie.link.gen.current,temperature.gpu,utilization.gpu,utilization.memory, memory.total,memory.free,memory.used --format=csv -l 5
 
 
@@ -15,13 +18,70 @@ nvidia-smi --query-gpu=timestamp,name,utilization.gpu,utilization.memory, --form
 nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link.gen.max, pcie.link.gen.current,temperature.gpu,utilization.gpu,utilization.memory, memory.total,memory.free,memory.used --format=csv -lms 5
 ```
 
+#### `nvidia-smi pmon` 常用命令
+
+进程监控命令，以滚动条形式显示GPU进程状态信息。附加选项：
+
+   ```bash
+   # 指定刷新时间（默认为1秒，最大为10秒）
+   nvidia-smi pmon –d xxx
+   # 显示指定数目的统计信息并退出
+   nvidia-smi pmon –c xxx
+
+   #指定显示哪些监控指标（默认为u），其中：u：GPU使用率  m：FB内存使用情况
+   nvidia-smi pmon –s xxx
+
+   nvidia-smi pmon –o D/T  #指定显示的时间格式D：YYYYMMDD，THH:MM:SS
+   nvidia-smi pmon –f xxx #将查询的信息输出到具体的文件中，不在终端显示
+   ```
+
+#### 设备监控命令 (`nvidia-smi dmon`)
+
+设备监控命令，以滚动条形式显示GPU设备统计信息。监控最多4个GPU，如果没有指定任何GPU，则默认监控GPU0-GPU3（GPU索引从0开始）。
+
+```
+nvidia-smi dmon -s "pucet" -i 0 -o "DT" -d 2
+#Date       Time        gpu   pwr gtemp mtemp    sm   mem   enc   dec  mclk  pclk sbecc dbecc   pci rxpci txpci
+#YYYYMMDD   HH:MM:SS    Idx     W     C     C     %     %     %     %   MHz   MHz  errs  errs  errs  MB/s  MB/s
+ 20210102   19:12:31      0    37    19     -     0     0     0     0  4006   582     -     -     0     0     1
+ 20210102   19:12:33      0    39    19     -     0     0     0     0  4006  1582     -     -     0     0     0
+ 20210102   19:12:35      0    39    19     -     0     0     0     0  4006  1582     -     -     0     0     0
+```
+
+- 附加选项:
+
+| Command      | Description |
+|:---:|:----|     
+|nvidia-smi dmon -i          |                                                     |
+|nvidia-smi dmon -d xxx		 |  指定刷新时间（默认为1秒）                                      |
+|nvidia-smi dmon -c xxx 	|	显示指定数目的统计信息并退出                                     |
+|nvidia-smi dmon -o "DT" 	|	指定显示的时间格式D YYYYMMDD，TH                             |
+|nvidia-smi dmon -f log.txt |		将查询的信息输出到具体的文件中，不在终端显示                         |
+|nvidia-smi dmon -s "puc"    |  指定显示哪些监控指标（默认为puc），其中                              |
+
+| metrics for `-s`     | Description |
+| :---:        |    :----  |
+|p | 电源使用情况和温度（pwr 功耗，temp 温度）                          |
+|u | GPU使用率（sm 流处理器，mem 显存，enc 编码资源，dec 解码资源）           |
+|c | GPU处理器和GPU内存时钟频率（mclk 显存频率，pclk 处理器频率）             |
+|v | 电源和热力异常                                            |
+|m | FB内存和Bar1内存                                        |
+|e | ECC错误和PCIe重显错误个数                                   |
+|t | PCIe读写带宽                                           |
+
+
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+
+#### 和时钟和电源相关命令
+
 ![时钟和电源相关命令](./images/1.png)
 
 详见: http://nvidia.custhelp.com/app/answers/detail/a_id/3751/~/useful-nvidia-smi-queries
 
-
 #### nvidia-smi 查询
-
 
 | Term      | Description |
 | :---:        |    :----  |
@@ -68,47 +128,6 @@ nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link
 
 
 
-#### 设备监控命令 (`nvidia-smi dmon`)
-
-设备监控命令，以滚动条形式显示GPU设备统计信息。监控最多4个GPU，如果没有指定任何GPU，则默认监控GPU0-GPU3（GPU索引从0开始）。
-
-```
-nvidia-smi dmon -s "pucet" -i 0 -o "DT" -d 2
-#Date       Time        gpu   pwr gtemp mtemp    sm   mem   enc   dec  mclk  pclk sbecc dbecc   pci rxpci txpci
-#YYYYMMDD   HH:MM:SS    Idx     W     C     C     %     %     %     %   MHz   MHz  errs  errs  errs  MB/s  MB/s
- 20210102   19:12:31      0    37    19     -     0     0     0     0  4006   582     -     -     0     0     1
- 20210102   19:12:33      0    39    19     -     0     0     0     0  4006  1582     -     -     0     0     0
- 20210102   19:12:35      0    39    19     -     0     0     0     0  4006  1582     -     -     0     0     0
-```
-
-附加选项 
-
-| Command      | Description |
-| :---:        |    :----  |     
-|nvidia-smi dmon -i          |                                                     |
-|nvidia-smi dmon -d xxx		 |  指定刷新时间（默认为1秒）                                      |
-|nvidia-smi dmon -c xxx 	|	显示指定数目的统计信息并退出                                     |
-|nvidia-smi dmon -o "DT" 	|	指定显示的时间格式D YYYYMMDD，TH                             |
-|nvidia-smi dmon -f log.txt |		将查询的信息输出到具体的文件中，不在终端显示                         |
-|nvidia-smi dmon -s "puc"    |  指定显示哪些监控指标（默认为puc），其中                              |
-
-
-| metrics for `-s`     | Description |
-| :---:        |    :----  |
-|p | 电源使用情况和温度（pwr 功耗，temp 温度）                          |
-|u | GPU使用率（sm 流处理器，mem 显存，enc 编码资源，dec 解码资源）           |
-|c | GPU处理器和GPU内存时钟频率（mclk 显存频率，pclk 处理器频率）             |
-|v | 电源和热力异常                                            |
-|m | FB内存和Bar1内存                                        |
-|e | ECC错误和PCIe重显错误个数                                   |
-|t | PCIe读写带宽                                           |
-
-
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
-
 #### 在Windows上使用 `nvidia-smi`
 
 - nvidia-smi所在的位置为：`C:\Program Files\NVIDIA Corporation\NVSMI`
@@ -127,6 +146,195 @@ nvidia-smi dmon -s "pucet" -i 0 -o "DT" -d 2
 - 安装Python包 `pip install nvidia-ml-py`
 - NVML API[手册](https://docs.nvidia.com/deploy/nvml-api/nvml-api-reference.html)
 
+
+## GPU Test Tools
+
+#### GPU Stree Test on Linux
+
+GPU burn
+
+* Multi-GPU CUDA stress test http://wili.cc/blog/gpu-burn.html
+* source code: https://github.com/wilicc/gpu-burn
+
+
+## MPS
+
+Enable or disable MPS:
+
+```bash
+# ====== 启动 =========
+export CUDA_VISIBLE_DEVICES=0         # 这里以GPU0为例，其他卡类似
+nvidia-smi -i 0 -c EXCLUSIVE_PROCESS  # 让GPU0变为独享模式。
+nvidia-cuda-mps-control -d            # 开启mps服务 
+# ====== 查看 =========
+ps -ef | grep mps                     # 启动成功后能看到相应的进程
+# ====== 停止 =========
+nvidia-smi -i 0 -c DEFAULT       # 让GPU恢复为默认模式。
+echo quit | nvidia-cuda-mps-control   # 关闭mps服务      
+```
+
+## Use Multi-Instance GPU (MIG)
+
+Multi-Instance GPU (MIG) is a feature on the A100/A30 GPU (and  Next-Gen Hopper GPUs) to slice it into GPU instances and GPU instances into compute instances. Note that many of the commands listed below might need to be run as sudo.
+
+### Config MIG with `nvidia-smi`
+
+To enable or disable MIG mode on all GPUs or a certain GPU:
+
+```bash
+sudo nvidia-smi -mig 1
+sudo nvidia-smi -mig 0
+
+sudo nvidia-smi -i 3 -mig 1
+sudo nvidia-smi -i 3 -mig 0
+```
+
+
+To list all possible GPU instance placements:
+
+```bash
+$ sudo nvidia-smi mig -lgip
++--------------------------------------------------------------------------+
+| GPU instance profiles:                                                   |
+| GPU   Name          ID    Instances   Memory     P2P    SM    DEC   ENC  |
+|                           Free/Total   GiB              CE    JPEG  OFA  |
+|==========================================================================|
+|   0  MIG 1g.5gb     19     7/7        4.75       No     14     0     0   |
+|                                                          1     0     0   |
++--------------------------------------------------------------------------+
+|   0  MIG 2g.10gb    14     3/3        9.75       No     28     1     0   |
+|                                                          2     0     0   |
++--------------------------------------------------------------------------+
+|   0  MIG 3g.20gb     9     2/2        19.62      No     42     2     0   |
+|                                                          3     0     0   |
++--------------------------------------------------------------------------+
+|   0  MIG 4g.20gb     5     1/1        19.62      No     56     2     0   |
+|                                                          4     0     0   |
++--------------------------------------------------------------------------+
+|   0  MIG 7g.40gb     0     1/1        39.50      No     98     5     0   |
+|                                                          7     1     1   |
++--------------------------------------------------------------------------+
+
+
+$ sudo nvidia-smi mig -lgipp
+GPU  0 Profile ID 19 Placements: {0,1,2,3,4,5,6}:1
+GPU  0 Profile ID 14 Placements: {0,2,4}:2
+GPU  0 Profile ID  9 Placements: {0,4}:4
+GPU  0 Profile ID  5 Placement : {0}:4
+GPU  0 Profile ID  0 Placement : {0}:8
+```
+
+To create GPU instances on a MIG-enabled GPU:
+
+```bash
+$ sudo nvidia-smi mig -cgi 19,19,19,19,19,19,19 -i 3
+Successfully created GPU instance ID 13 on GPU  0 using profile MIG 1g.5gb (ID 19)
+Successfully created GPU instance ID 11 on GPU  0 using profile MIG 1g.5gb (ID 19)
+Successfully created GPU instance ID 12 on GPU  0 using profile MIG 1g.5gb (ID 19)
+Successfully created GPU instance ID  7 on GPU  0 using profile MIG 1g.5gb (ID 19)
+Successfully created GPU instance ID  8 on GPU  0 using profile MIG 1g.5gb (ID 19)
+Successfully created GPU instance ID  9 on GPU  0 using profile MIG 1g.5gb (ID 19)
+Successfully created GPU instance ID 10 on GPU  0 using profile MIG 1g.5gb (ID 19)
+```
+
+To create compute instances on a MIG-enabled GPU:
+
+```bash
+$ sudo nvidia-smi mig -cci -i 3
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID  7 using profile MIG 1g.5gb (ID  0)
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID  8 using profile MIG 1g.5gb (ID  0)
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID  9 using profile MIG 1g.5gb (ID  0)
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID 10 using profile MIG 1g.5gb (ID  0)
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID 11 using profile MIG 1g.5gb (ID  0)
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID 12 using profile MIG 1g.5gb (ID  0)
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID 13 using profile MIG 1g.5gb (ID  0)
+```
+
+
+To view the created MIG instances:
+
+```bash
+$ nvidia-smi
+(...)
+$ nvidia-smi -L
+GPU 0: A100-PCIE-40GB (UUID: GPU-0069414c-9f30-41f9-d5d8-87890423f0c4)
+  MIG 1g.5gb Device 0: (UUID: MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/7/0)
+  MIG 1g.5gb Device 1: (UUID: MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/8/0)
+  MIG 1g.5gb Device 2: (UUID: MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/9/0)
+  MIG 1g.5gb Device 3: (UUID: MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/10/0)
+  MIG 1g.5gb Device 4: (UUID: MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/11/0)
+  MIG 1g.5gb Device 5: (UUID: MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/12/0)
+  MIG 1g.5gb Device 6: (UUID: MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/13/0)
+```
+
+To list GPU instances:  `$ sudo nvidia mig -lgi`
+To list compute instances: `$ sudo nvidia mig -lci`
+
+```bash
++-------------------------------------------------------+
+| Compute instances:                                    |
+| GPU     GPU       Name             Profile   Instance |
+|       Instance                       ID        ID     |
+|         ID                                            |
+|=======================================================|
+|   0      7       MIG 1g.5gb           0         0     |
++-------------------------------------------------------+
+|   0      8       MIG 1g.5gb           0         0     |
++-------------------------------------------------------+
+|   0      9       MIG 1g.5gb           0         0     |
++-------------------------------------------------------+
+|   0     11       MIG 1g.5gb           0         0     |
++-------------------------------------------------------+
+|   0     12       MIG 1g.5gb           0         0     |
++-------------------------------------------------------+
+|   0     13       MIG 1g.5gb           0         0     |
++-------------------------------------------------------+
+|   0     14       MIG 1g.5gb           0         0     |
++-------------------------------------------------------+
+```
+
+To destroy compute instances:
+
+```bash
+$ sudo nvidia-smi mig -dci -i 3
+Successfully destroyed compute instance ID  0 from GPU  0 GPU instance ID  7
+Successfully destroyed compute instance ID  0 from GPU  0 GPU instance ID  8
+Successfully destroyed compute instance ID  0 from GPU  0 GPU instance ID  9
+Successfully destroyed compute instance ID  0 from GPU  0 GPU instance ID 10
+Successfully destroyed compute instance ID  0 from GPU  0 GPU instance ID 11
+Successfully destroyed compute instance ID  0 from GPU  0 GPU instance ID 12
+Successfully destroyed compute instance ID  0 from GPU  0 GPU instance ID 13
+```
+
+To destroy GPU instances:
+```bash
+$ sudo nvidia-smi mig -dgi -i 3
+Successfully destroyed GPU instance ID  7 from GPU  0
+Successfully destroyed GPU instance ID  8 from GPU  0
+Successfully destroyed GPU instance ID  9 from GPU  0
+Successfully destroyed GPU instance ID 10 from GPU  0
+Successfully destroyed GPU instance ID 11 from GPU  0
+Successfully destroyed GPU instance ID 12 from GPU  0
+Successfully destroyed GPU instance ID 13 from GPU  0
+```
+
+### Use MIG with Docker container
+
+To expose a MIG instance to a Docker container, add --gpus='"device=MIG-GPU-0069414c-9f30-41f9-d5d8-87890423f0c4/7/0"' to your docker --runtime=nvidia ... command.
+
+Multiple MIG instances can be specified by separating with commas, like --gpus='"device=0:0,0:1"' for example.
+
+### MIG Documentation
+
+See [NVIDIA_MIG_User_Guide](https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_MIG_User_Guide.pdf) for more information.
+
+## Nsight System
+
+```bash
+nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx --delay=60 --duration 60 -o your_output_file python train.py 
+
+nsys profile --trace=cuda,osrt,nvtx --delay=60 --duration 60 -o your_output_file python train.py
+```
 
 ## 附录
 
@@ -352,6 +560,64 @@ Please see the nvidia-smi(1) manual page for more detailed information.
 
 ```
 
+#### nvidia-smi manual for MIG
+
+
+Run `$ nvidia-smi mig -h` to dump full usage information:
+
+```bash
+    mig -- Multi Instance GPU management.
+
+    Usage: nvidia-smi mig [options]
+
+    Options include:
+    [-h | --help]: Display help information.
+    [-i | --id]: Enumeration index, PCI bus ID or UUID.
+                 Provide comma separated values for more than one device.
+    [-gi | --gpu-instance-id]: GPU instance ID.
+                               Provide comma separated values for more than one GPU instance.
+    [-ci | --compute-instance-id]: Compute instance ID.
+                                   Provide comma separated values for more than one compute
+                                   instance.
+    [-lgip | --list-gpu-instance-profiles]: List supported GPU instance profiles.
+                                            Option -i can be used to restrict the command to
+                                            run on a specific GPU.
+    [-lgipp | --list-gpu-instance-possible-placements]: List possible GPU instance placements
+                                                        in the following format, {Start}:Size.
+                                                        Option -i can be used to restrict the
+                                                        command to run on a specific GPU.
+    [-C | --default-compute-instance]: Create compute instance with the default profile when used
+                                       with the option to create a GPU instance (-cgi).
+    [-cgi | --create-gpu-instance]: Create GPU instance for the given profile names or IDs.
+                                    Provide comma separated values for more than one profile.
+                                    Option -i can be used to restrict the command to run on
+                                    a specific GPU.
+    [-dgi | --destroy-gpu-instance]: Destroy GPU instances.
+                                     Options -i and -gi can be used individually or combined
+                                     to restrict the command to run on a specific GPU or GPU
+                                     instance.
+    [-lgi | --list-gpu-instances]: List GPU instances.
+                                   Option -i can be used to restrict the command to run on a
+                                   specific GPU.
+    [-lcip | --list-compute-instance-profiles]: List supported compute instance profiles.
+                                                Options -i and -gi can be used individually or
+                                                combined to restrict the command to run on a
+                                                specific GPU or GPU instance.
+    [-cci | --create-compute-instance]: Create compute instance for the given profile name or IDs.
+                                        Provide comma separated values for more than one profile.
+                                        If no profile name or ID is given, then the default*
+                                        compute instance profile ID will be used. Options -i and
+                                        -gi can be used individually or combined to restrict the
+                                        command to run on a specific GPU or GPU instance.
+    [-dci | --destroy-compute-instance]: Destroy compute instances.
+                                         Options -i, -gi and -ci can be used individually or
+                                         combined to restrict the command to run on a specific
+                                         GPU or GPU instance or compute instance.
+    [-lci | --list-compute-instances]: List compute instances.
+                                       Options -i and -gi can be used individually or combined
+                                       to restrict the command to run on a specific GPU or GPU
+                                       instance.
+```
 
 
 #### Reference
