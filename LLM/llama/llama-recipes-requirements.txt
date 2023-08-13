@@ -1,0 +1,12 @@
+-f https://download.pytorch.org/whl/torch_stable.html 
+accelerate
+appdirs
+loralib
+bitsandbytes==0.39.1
+black
+black[jupyter]
+datasets
+fire
+git+https://github.com/huggingface/peft.git
+py7zr
+optimum
