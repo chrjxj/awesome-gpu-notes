@@ -3,6 +3,12 @@
 - Overview:[Merlin Overview](https://developer.nvidia.com/nvidia-merlin)
   
 
+## SOK (sparse_operation_kit)
+
+training example (also a benchmark): https://github.com/NVIDIA-Merlin/HugeCTR/tree/main/sparse_operation_kit/sparse_operation_kit/experiment/benchmark/dlrm/lookup_sparse
+unit test: https://github.com/NVIDIA-Merlin/HugeCTR/blob/main/sparse_operation_kit/sparse_operation_kit/experiment/test/function_test/tf2/lookup/lookup_sparse_distributed_hkv_test.py
+API doc: https://nvidia-merlin.github.io/HugeCTR/sparse_operation_kit/master/api/experiment.html
+
 ## Source code
 
 - Open-source Merlin GitHub Repo -[Merlin Repo](https://github.com/NVIDIA-Merlin/Merlin)
