@@ -1,4 +1,4 @@
-# awesome-gpu-notes
+# Awesome GPU Notes
 
 ## GPU and CUDA Documents
 
@@ -58,3 +58,14 @@ Videos:
     * https://www.youtube.com/watch?v=UNX0KNMQlW8
 
 - NV: [what the profiler is telling you](https://youtu.be/kKANP0kL_hk)
+
+
+## Modulus, AI for science
+
+* [Deep Learning for Science and Engineering](https://www.nvidia.com/en-us/on-demand/deep-learning-for-science-and-engineering/), George Karniadakis, Professor, Brown University
+* [DLI](https://github.com/openhackathons-org/End-to-End-AI-for-Science)
+* [End-to-End AI for Science](https://github.com/openhackathons-org/End-to-End-AI-for-Science)
+
+
+
+
