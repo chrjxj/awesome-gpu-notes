@@ -61,6 +61,7 @@ Third-party
 
 - CV, CNN models:[link](https://docs.nvidia.com/tao/tao-toolkit/text/trtexec_integration/index.html)
 - Bert alike models: `trtexec --onnx=onnx/model.onnx --saveEngine=trt_fp16.engine --fp16 --verbose --minShapes='input_ids':8x512,'attention_mask':8x512 --optShapes='input_ids':16x512,'attention_mask':16x512 --maxShapes='input_ids':32x512,'attention_mask':32x512`
+- another multiple inputs example: [link](https://docs.nvidia.com/tao/tao-toolkit/text/trtexec_integration/trtexec_siamese_oi.html)
 
 **Inference instructions by Model**
 
