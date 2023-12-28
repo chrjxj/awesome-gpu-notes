@@ -68,4 +68,13 @@ Videos:
 
 
 
+## Various Softwares
+
+#### NVIDIA cuNumeric
+
+
+* cunumeric [home page](https://developer.nvidia.com/cunumeric) and [github](https://github.com/nv-legate/cunumeric)
+* blog: https://developer.nvidia.com/blog/accelerating-python-applications-with-cunumeric-and-legate/
+* About [legion](https://legion.stanford.edu)
+  
 
