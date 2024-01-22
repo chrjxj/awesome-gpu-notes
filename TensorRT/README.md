@@ -66,7 +66,8 @@ Third-party
 **Inference instructions by Model**
 
 - `trtexec --loadEngine=./trt_fp16.engine --verbose --shapes=input_ids:16x512,attention_mask:16x512 --useCudaGraph`
-
+- `trtexec --loadEngine=model_fp16.plan --verbose --dumpOutput  --dumpRawBindingsToFile
+`
 **Benchmark results**
 
 ![trtexec](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/graphics/trtexec.PNG)
