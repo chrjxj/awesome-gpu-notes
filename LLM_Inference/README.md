@@ -1,5 +1,20 @@
 # README
 
+
+## NV AI dynamo
+
+dynamo https://github.com/ai-dynamo/dynamo
+
+NVIDIA Inference Xfer Library (NIXL) https://github.com/ai-dynamo/nixl/tree/main?tab=readme-ov-file
+
+Throughput is Not All You Need: Maximizing Goodput in LLM Serving using Prefill-Decode Disaggregation: https://hao-ai-lab.github.io/blogs/distserve/
+
+
+
+Understanding the LLM Inference Workload - Mark Moyou, NVIDIA https://www.youtube.com/watch?v=z2M8gKGYws4
+
+How To Reduce LLM Decoding Time With KV-Caching https://www.youtube.com/watch?v=sNv5jpAwkcU
+
 ## Commands
 
 
