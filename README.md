@@ -51,6 +51,29 @@ NVIDIA Inference Xfer Library (NIXL): https://github.com/ai-dynamo/nixl
 
 - [distributed training](distributed-training/README.md)
 
+apex
+
+nemo framework
+
+megatron-llm
+
+nemo aligner
+
+nemo-megatron-launcher
+
+nemo guardrials
+
+nemo Data curator
+
+nemo-rlhf
+
+
+
+## Reference Applications
+
+GenerativeAI Examples 
+
+
 ## Tools
 
 
