@@ -26,10 +26,26 @@ Topics
 ## Inference
 
 
-TensorRT
+[TensorRT](https://github.com/NVIDIA/TensorRT)
 
-Triton
+https://github.com/NVIDIA/TensorRT-LLM
 
+https://github.com/NVIDIA/tensorrt-model-optimizer
+
+[Triton](https://github.com/triton-inference-server)
+
+* https://github.com/triton-inference-server/server
+* https://github.com/triton-inference-server/client
+* https://github.com/triton-inference-server/tensorrtllm_backend
+* https://github.com/triton-inference-server/perf_analyzer
+
+
+**ai-dynamo - LLM Inference "OS"**
+
+https://github.com/ai-dynamo/dynamo
+NVIDIA Inference Xfer Library (NIXL): https://github.com/ai-dynamo/nixl
+
+![dynamo](https://github.com/ai-dynamo/dynamo/blob/main/docs/images/architecture.png)
 
 ## Training
 
@@ -77,4 +93,13 @@ Videos:
 * blog: https://developer.nvidia.com/blog/accelerating-python-applications-with-cunumeric-and-legate/
 * About [legion](https://legion.stanford.edu)
   
+
+## Storage
+
+Portus: Efficient DNN Checkpointing to Persistent Memory with Zero-Copy
+
+* paper: https://www.tianyuanwu.com/files/portus.pdf
+* https://kms.shanghaitech.edu.cn/handle/2MSLDSTB/414241
+
+
 
