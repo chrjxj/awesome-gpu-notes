@@ -1,3 +1,5 @@
+
+
 # Awesome GPU Notes
 
 ## GPU and CUDA Documents
@@ -14,6 +16,7 @@ CUDA
 - CUDA Sample Code
 
     * [sgemm](https://github.com/cwpearson/nvidia-performance-tools/tree/90890e807ef9fc1532ee08938de6689444701686/sgemm)
+    * [NVIDIA/cuda-samples](https://github.com/NVIDIA/cuda-samples)
 
 
 Topics
@@ -65,7 +68,3 @@ Videos:
 * [Deep Learning for Science and Engineering](https://www.nvidia.com/en-us/on-demand/deep-learning-for-science-and-engineering/), George Karniadakis, Professor, Brown University
 * [DLI](https://github.com/openhackathons-org/End-to-End-AI-for-Science)
 * [End-to-End AI for Science](https://github.com/openhackathons-org/End-to-End-AI-for-Science)
-
-
-
-
